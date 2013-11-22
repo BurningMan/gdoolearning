@@ -19,10 +19,10 @@
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/univercity</prop>
-                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
-                <prop key="hibernate.connection.username">root</prop>
-                <prop key="hibernate.connection.password">root</prop>
+                <prop key="hibernate.connection.url">${jdbc.url}</prop>
+                <prop key="hibernate.connection.driver_class">${jdbc.driverClassName}</prop>
+                <prop key="hibernate.connection.username">${jdbc.username}</prop>
+                <prop key="hibernate.connection.password">${jdbc.password}</prop>
             </props>
         </property>
         <property name="mappingResources">
