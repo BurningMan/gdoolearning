@@ -16,15 +16,23 @@
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="configLocation" value="classpath:/hibernate.cfg.xml"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/univercity</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+                <prop key="hibernate.connection.username">root</prop>
+                <prop key="hibernate.connection.password">root</prop>
             </props>
         </property>
         <property name="mappingResources">
             <list>
-                <value>Subject.hbm.xml</value>
+                <value>AttendanceEntity.hbm.xml</value>
+                <value>CourseEntity.hbm.xml</value>
+                <value>LessonEntity.hbm.xml</value>
+                <value>StudentEntity.hbm.xml</value>
+                <value>SubjectEntity.hbm.xml</value>
+                <value>SubmissionEntity.hbm.xml</value>
             </list>
         </property>
     </bean>
