@@ -13,8 +13,10 @@ import java.util.List;
  * Time: 12:44
  */
 public class AttendanceDaoImpl implements AttendanceDao {
+
+
     @Autowired
-    private SessionFactory sessionFactory;
+    private org.hibernate.SessionFactory sessionFactory;
 
     @Override
     public void addAttendance (AttendanceEntity attendance) {

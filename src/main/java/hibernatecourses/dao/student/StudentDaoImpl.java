@@ -1,6 +1,8 @@
 package hibernatecourses.dao.student;
 
 import hibernatecourses.entity.StudentEntity;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -11,6 +13,11 @@ import java.util.List;
  * Time: 12:44
  */
 public class StudentDaoImpl implements StudentDao {
+
+
+    @Autowired
+    private SessionFactory sessionFactory;
+
     @Override
     public void addStudent (StudentEntity student) {
     }

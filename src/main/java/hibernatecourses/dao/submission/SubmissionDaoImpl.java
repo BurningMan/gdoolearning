@@ -1,6 +1,8 @@
 package hibernatecourses.dao.submission;
 
 import hibernatecourses.entity.SubmissionEntity;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -11,16 +13,21 @@ import java.util.List;
  * Time: 12:44
  */
 public class SubmissionDaoImpl implements SubmissionDao {
+
+
+    @Autowired
+    private SessionFactory sessionFactory;
+
     @Override
-    public void addSubmission (SubmissionEntity submission) {
+    public void addSubmission(SubmissionEntity submission) {
     }
 
     @Override
-    public List<SubmissionEntity> getAllSubmission () {
+    public List<SubmissionEntity> getAllSubmission() {
         return null;
     }
 
     @Override
-    public void deleteSubmission (Integer submissionId) {
+    public void deleteSubmission(Integer submissionId) {
     }
 }
