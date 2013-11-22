@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 /**
  * User: Rodion
  * Date: 22.11.13
- * Time: 12:51
+ * Time: 14:02
  */
 public class LessonEntity {
     private int id;

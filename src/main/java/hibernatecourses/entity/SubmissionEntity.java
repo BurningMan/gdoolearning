@@ -44,9 +44,8 @@ public class SubmissionEntity {
         SubmissionEntity that = (SubmissionEntity) o;
 
         if (courseId != that.courseId) return false;
-        if (studentId != that.studentId) return false;
+        return studentId == that.studentId;
 
-        return true;
     }
 
     @Override

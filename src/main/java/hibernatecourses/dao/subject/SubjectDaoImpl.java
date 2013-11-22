@@ -2,7 +2,9 @@ package hibernatecourses.dao.subject;
 
 import hibernatecourses.entity.SubjectEntity;
 import org.hibernate.SessionFactory;
+import org.hibernate.internal.SessionFactoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 
 import java.util.List;
 

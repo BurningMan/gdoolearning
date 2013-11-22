@@ -3,7 +3,7 @@ package hibernatecourses.entity;
 /**
  * User: Rodion
  * Date: 22.11.13
- * Time: 12:51
+ * Time: 14:02
  */
 public class CourseEntity {
     private int id;
@@ -50,6 +50,4 @@ public class CourseEntity {
                 ", subjectId=" + subjectId +
                 '}';
     }
-
-
 }

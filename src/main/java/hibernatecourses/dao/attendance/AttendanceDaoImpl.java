@@ -2,7 +2,6 @@ package hibernatecourses.dao.attendance;
 
 import hibernatecourses.entity.AttendanceEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.toplink.SessionFactory;
 
 import java.util.List;
 
@@ -19,15 +18,16 @@ public class AttendanceDaoImpl implements AttendanceDao {
     private org.hibernate.SessionFactory sessionFactory;
 
     @Override
-    public void addAttendance (AttendanceEntity attendance) {
+    public void addAttendance(AttendanceEntity attendance) {
+
     }
 
     @Override
-    public List<AttendanceEntity> getAllAttendances () {
+    public List<AttendanceEntity> getAllAttendances() {
         return null;
     }
 
     @Override
-    public void deleteAttendance (Integer attendanceId) {
+    public void deleteAttendance(Integer attendanceId) {
     }
 }
