@@ -12,14 +12,14 @@
             <column name="name" sql-type="varchar" length="45"/>
         </property>
 
-        <set name="submissionEntity" cascade="delete" table="submission">
+        <set name="SubmissionEntity" cascade="save-update" table="submission">
             <key>
                 <column name="student_id" not-null="true" />
             </key>
             <one-to-many class="hibernatecourses.entity.SubmissionEntity" />
         </set>
 
-        <set name="attendanceEntity" cascade="save-update" table="attendance">
+        <set name="AttendanceEntity" cascade="save-update" table="attendance">
             <key>
                 <column name="student_id" not-null="true" />
             </key>

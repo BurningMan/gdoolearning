@@ -10,6 +10,8 @@ import java.util.Set;
  */
 public class LessonEntity {
     private int id;
+    private int courseId;
+    private Timestamp startTime;
     private Set<AttendanceEntity> attendanceEntity;
 
     public Set<AttendanceEntity> getAttendanceEntity() {
@@ -28,8 +30,6 @@ public class LessonEntity {
         this.id = id;
     }
 
-    private int courseId;
-
     public int getCourseId() {
         return courseId;
     }
@@ -38,14 +38,12 @@ public class LessonEntity {
         this.courseId = courseId;
     }
 
-    private Timestamp date;
-
-    public Timestamp getDate() {
-        return date;
+    public Timestamp getStartTime() {
+        return startTime;
     }
 
-    public void setDate(Timestamp date) {
-        this.date = date;
+    public void setStartTime(Timestamp date) {
+        this.startTime = date;
     }
 
     private String topic;
@@ -66,7 +64,7 @@ public class LessonEntity {
         LessonEntity that = (LessonEntity) o;
 
         if (courseId != that.courseId) return false;
-        if (date != null ? !date.equals(that.date) : that.date != null) return false;
+        if (startTime != null ? !startTime.equals(that.startTime) : that.startTime != null) return false;
         if (topic != null ? !topic.equals(that.topic) : that.topic != null) return false;
 
         return true;
@@ -75,7 +73,7 @@ public class LessonEntity {
     @Override
     public int hashCode() {
         int result = courseId;
-        result = 31 * result + (date != null ? date.hashCode() : 0);
+        result = 31 * result + (startTime != null ? startTime.hashCode() : 0);
         result = 31 * result + (topic != null ? topic.hashCode() : 0);
         return result;
     }
@@ -85,7 +83,7 @@ public class LessonEntity {
         return "LessonEntity{" +
                 "id=" + id +
                 ", courseId=" + courseId +
-                ", date=" + date +
+                ", date=" + startTime +
                 ", topic='" + topic + '\'' +
                 '}';
     }

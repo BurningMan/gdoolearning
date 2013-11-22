@@ -11,6 +11,12 @@
         <property name="subjectId">
             <column name="subject_id" sql-type="int" length="10"/>
         </property>
+        <property name="startDate">
+            <column name="start_date" sql-type="timestamp" />
+        </property>
+        <property name="finishDate">
+            <column name="finish_date" sql-type="timestamp" />
+        </property>
 
         <set name="submissionEntity" cascade="save-update" table="submission">
             <key>

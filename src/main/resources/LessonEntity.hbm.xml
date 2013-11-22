@@ -11,14 +11,14 @@
         <property name="courseId">
             <column name="course_id" sql-type="int" length="10"/>
         </property>
-        <property name="date">
-            <column name="date" sql-type="timestamp" length="19" not-null="true"/>
+        <property name="startTime">
+            <column name="start_time" sql-type="timestamp" not-null="true"/>
         </property>
         <property name="topic">
             <column name="topic" sql-type="varchar" length="80"/>
         </property>
 
-        <set name="attendanceEntity" cascade="save-update" table="attendance">
+        <set name="AttendanceEntity" cascade="save-update" table="attendance">
             <key>
                 <column name="lesson_id" not-null="true" />
             </key>

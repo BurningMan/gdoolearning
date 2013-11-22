@@ -18,16 +18,15 @@ public class AttendanceDaoImpl implements AttendanceDao {
     private org.hibernate.SessionFactory sessionFactory;
 
     @Override
-    public void addAttendance(AttendanceEntity attendance) {
-
+    public void addAttendance (AttendanceEntity attendance) {
     }
 
     @Override
-    public List<AttendanceEntity> getAllAttendances() {
+    public List<AttendanceEntity> getAllAttendances () {
         return null;
     }
 
     @Override
-    public void deleteAttendance(Integer attendanceId) {
+    public void deleteAttendance (Integer attendanceId) {
     }
 }
