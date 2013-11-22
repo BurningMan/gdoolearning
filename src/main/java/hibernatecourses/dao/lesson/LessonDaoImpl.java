@@ -20,14 +20,12 @@ public class LessonDaoImpl implements LessonDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    @Transactional
     @Override
     public void addLesson (LessonEntity lesson) {
         Session session = sessionFactory.getCurrentSession();
         session.save(lesson);
     }
 
-    @Transactional
     @Override
     public java.util.List<LessonEntity> getAllLessons () {
         Session session = sessionFactory.getCurrentSession();
@@ -35,7 +33,6 @@ public class LessonDaoImpl implements LessonDao {
         return lessonEntities;
     }
 
-    @Transactional
     @Override
     public void deleteLesson (Integer lessonId) {
         Session session = sessionFactory.getCurrentSession();

@@ -21,21 +21,18 @@ public class CourseDaoImpl implements CourseDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    @Transactional
     @Override
     public void addCourse (CourseEntity course) {
         Session session = sessionFactory.getCurrentSession();
         session.save(course);
     }
 
-    @Transactional
     @Override
     public List<hibernatecourses.entity.CourseEntity> getAllCourses () {
         Session session = sessionFactory.getCurrentSession();
         return session.createQuery("from CourseEntity").list();
     }
 
-    @Transactional
     @Override
     public void deleteCourse (Integer courseId) {
         Session session = sessionFactory.getCurrentSession();

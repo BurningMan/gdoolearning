@@ -22,14 +22,12 @@ public class SubmissionDaoImpl implements SubmissionDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    @Transactional
     @Override
     public void addSubmission(SubmissionEntity submission) {
         Session session = sessionFactory.getCurrentSession();
         session.save(submission);
     }
 
-    @Transactional
     @Override
     public List<SubmissionEntity> getAllSubmission() {
         Session session = sessionFactory.getCurrentSession();
@@ -37,7 +35,6 @@ public class SubmissionDaoImpl implements SubmissionDao {
         return studentEntities;
     }
 
-    @Transactional
     @Override
     public void deleteSubmission(Integer submissionId) {
         Session session = sessionFactory.getCurrentSession();

@@ -20,21 +20,18 @@ public class AttendanceDaoImpl implements AttendanceDao {
     @Autowired
     private org.hibernate.SessionFactory sessionFactory;
 
-    @Transactional
     @Override
     public void addAttendance (AttendanceEntity attendance) {
         Session session = sessionFactory.getCurrentSession();
         session.save(attendance);
     }
 
-    @Transactional
     @Override
     public List<AttendanceEntity> getAllAttendances () {
         Session session = sessionFactory.getCurrentSession();
         return session.createQuery("from AttendanceEntity").list();
     }
 
-    @Transactional
     @Override
     public void deleteAttendance (Integer attendanceId) {
         Session session = sessionFactory.getCurrentSession();

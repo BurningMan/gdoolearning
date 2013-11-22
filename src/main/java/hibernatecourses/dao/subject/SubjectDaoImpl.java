@@ -22,14 +22,12 @@ public class SubjectDaoImpl implements hibernatecourses.dao.subject.SubjectDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    @Transactional
     @Override
     public void addSubject(SubjectEntity subject) {
         Session session = sessionFactory.getCurrentSession();
         session.save(subject);
     }
 
-    @Transactional
     @Override
     public List<SubjectEntity> getAllSubjects() {
         Session session = sessionFactory.getCurrentSession();
@@ -37,7 +35,6 @@ public class SubjectDaoImpl implements hibernatecourses.dao.subject.SubjectDao {
         return studentEntities;
     }
 
-    @Transactional
     @Override
     public void deleteSubject(Integer subjectId) {
         Session session = sessionFactory.getCurrentSession();

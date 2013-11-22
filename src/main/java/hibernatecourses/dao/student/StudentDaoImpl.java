@@ -21,14 +21,12 @@ public class StudentDaoImpl implements StudentDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    @Transactional
     @Override
     public void addStudent(StudentEntity student) {
         Session session = sessionFactory.getCurrentSession();
         session.save(student);
     }
 
-    @Transactional
     @Override
     public List<StudentEntity> getAllStudents() {
         Session session = sessionFactory.getCurrentSession();
@@ -36,7 +34,6 @@ public class StudentDaoImpl implements StudentDao {
         return studentEntities;
     }
 
-    @Transactional
     @Override
     public void deleteStudent(Integer studentId) {
         Session session = sessionFactory.getCurrentSession();
