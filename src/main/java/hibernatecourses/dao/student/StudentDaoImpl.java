@@ -36,7 +36,14 @@ public class StudentDaoImpl implements StudentDao {
         return studentEntities;
     }
 
+    @Transactional
     @Override
     public void deleteStudent(Integer studentId) {
+        Session session = sessionFactory.getCurrentSession();
+        StudentEntity student = (StudentEntity) session.load(
+                StudentEntity.class, studentId);
+        if (student != null) {
+            session.delete(student);
+        }
     }
 }

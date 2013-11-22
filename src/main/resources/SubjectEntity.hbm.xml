@@ -7,16 +7,17 @@
     <class name="hibernatecourses.entity.SubjectEntity" table="subject">
         <id name="id">
             <column name="id" sql-type="int" length="10" not-null="true"/>
+            <generator class="increment"/>
         </id>
         <property name="name">
             <column name="name" sql-type="varchar" length="45"/>
         </property>
-        
+
         <set name="courseEntity" cascade="save-update" table="course">
             <key>
-                <column name="subject_id" not-null="true" />
+                <column name="subject_id" not-null="true"/>
             </key>
-            <one-to-many class="hibernatecourses.entity.SubmissionEntity" />
+            <one-to-many class="hibernatecourses.entity.SubmissionEntity"/>
         </set>
     </class>
 
