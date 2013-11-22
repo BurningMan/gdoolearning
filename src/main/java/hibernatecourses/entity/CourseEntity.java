@@ -33,7 +33,6 @@ public class CourseEntity {
 
         CourseEntity that = (CourseEntity) o;
 
-        if (id != that.id) return false;
         if (subjectId != that.subjectId) return false;
 
         return true;
@@ -41,8 +40,14 @@ public class CourseEntity {
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + subjectId;
-        return result;
+        return subjectId;
+    }
+
+    @Override
+    public String toString() {
+        return "CourseEntity{" +
+                "id=" + id +
+                ", subjectId=" + subjectId +
+                '}';
     }
 }
