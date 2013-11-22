@@ -24,6 +24,8 @@ CREATE TABLE `university`.`subject` (
 CREATE TABLE `university`.`course` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `subject_id` int(11),
+  `start_date` timestamp,
+  `finish_date` timestamp,
   PRIMARY KEY (`id`),
 	    CONSTRAINT `subject_constraint`
 		FOREIGN KEY `subject_constraint` (`subject_id`)
@@ -55,7 +57,7 @@ CREATE TABLE `university`.`submission` (
 CREATE TABLE `university`.`lesson` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `course_id` int(11),
-  `date` timestamp,
+  `start_time` timestamp,
   `topic` varchar(80) DEFAULT NULL,  
   PRIMARY KEY (`id`),
 		CONSTRAINT `lesson_course_constraint`
