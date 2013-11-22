@@ -20,7 +20,7 @@ import java.util.List;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/hibernate-context.xml")
-@Transactional
+
 public class SubjectDaoImplTest {
 
     private static final String FIRST_TEST_SUBJECT = "firstTestSubject";
