@@ -1,5 +1,7 @@
 package hibernatecourses.dao.lesson;
 
+import hibernatecourses.entity.LessonEntity;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Andrii_Chupyr
