@@ -33,8 +33,8 @@
                 <value>StudentEntity.hbm.xml</value>
                 <value>SubjectEntity.hbm.xml</value>
                 <value>SubmissionEntity.hbm.xml</value>
-                <value>classpath:hibernatecourses/entity/CourseEntity.hbm.xml</value>
-                <value>classpath:hibernatecourses/entity/LessonEntity.hbm.xml</value>
+                <value>CourseEntity.hbm.xml</value>
+                <value>LessonEntity.hbm.xml</value>
             </list>
         </property>
     </bean>
