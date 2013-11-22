@@ -4,6 +4,7 @@ import hibernatecourses.entity.StudentEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,27 +14,25 @@ import java.util.List;
  * Date: 22.11.13
  * Time: 12:44
  */
-public class StudentDaoImpl implements StudentDao {
 
+
+public class StudentDaoImpl implements StudentDao {
 
     @Autowired
     private SessionFactory sessionFactory;
 
+    @Transactional
     @Override
     public void addStudent(StudentEntity student) {
-        Session session = sessionFactory.openSession();
-        sessionFactory.getCurrentSession();
-        System.out.println(session.save(student));
-        session.close();
-
+        Session session = sessionFactory.getCurrentSession();
+        session.save(student);
     }
 
+    @Transactional
     @Override
     public List<StudentEntity> getAllStudents() {
         Session session = sessionFactory.getCurrentSession();
-        session.beginTransaction();
         List<StudentEntity> studentEntities = session.createQuery("from StudentEntity").list();
-        session.close();
         return studentEntities;
     }
 

@@ -15,12 +15,18 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("hibernate-context.xml");
-
-        // Retrieve the data source from the application context
         StudentDao studentDao = ctx.getBean("studentDao", StudentDao.class);
-        List<StudentEntity> studentEntities = studentDao.getAllStudents();
-        for (StudentEntity studentEntity : studentEntities) {
+        for (StudentEntity studentEntity : studentDao.getAllStudents()) {
             System.out.println(studentEntity.getName());
         }
+        studentDao.getAllStudents();
+        // Retrieve the data source from the application context
+        fillTableWithStudents(studentDao);
+    }
+
+    private static void fillTableWithStudents(StudentDao studentDao) {
+        StudentEntity studentOleg = new StudentEntity();
+        studentOleg.setName("Oleg");
+        studentDao.addStudent(studentOleg);
     }
 }
