@@ -1,6 +1,5 @@
 package hibernatecourses.dao.lesson;
 
-import hibernatecourses.entity.LessonEntity;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 

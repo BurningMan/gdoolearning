@@ -3,7 +3,7 @@ package hibernatecourses.entity;
 /**
  * User: Rodion
  * Date: 22.11.13
- * Time: 12:51
+ * Time: 14:02
  */
 public class CourseEntity {
     private int id;
@@ -33,6 +33,7 @@ public class CourseEntity {
 
         CourseEntity that = (CourseEntity) o;
 
+        if (id != that.id) return false;
         if (subjectId != that.subjectId) return false;
 
         return true;
@@ -40,16 +41,8 @@ public class CourseEntity {
 
     @Override
     public int hashCode() {
-        return subjectId;
+        int result = id;
+        result = 31 * result + subjectId;
+        return result;
     }
-
-    @Override
-    public String toString() {
-        return "CourseEntity{" +
-                "id=" + id +
-                ", subjectId=" + subjectId +
-                '}';
-    }
-
-
 }

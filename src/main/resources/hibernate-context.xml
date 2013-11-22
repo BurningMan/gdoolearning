@@ -19,10 +19,10 @@
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
-                <prop key="hibernate.connection.url">${jdbc.url}</prop>
-                <prop key="hibernate.connection.driver_class">${jdbc.driverClassName}</prop>
-                <prop key="hibernate.connection.username">${jdbc.username}</prop>
-                <prop key="hibernate.connection.password">${jdbc.password}</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/univercity</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+                <prop key="hibernate.connection.username">root</prop>
+                <prop key="hibernate.connection.password">root</prop>
             </props>
         </property>
         <property name="mappingResources">
@@ -33,6 +33,8 @@
                 <value>StudentEntity.hbm.xml</value>
                 <value>SubjectEntity.hbm.xml</value>
                 <value>SubmissionEntity.hbm.xml</value>
+                <value>classpath:hibernatecourses/entity/CourseEntity.hbm.xml</value>
+                <value>classpath:hibernatecourses/entity/LessonEntity.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -42,12 +44,12 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean id="attendanceDao" class="hibernatecources.attendanceDao.AttendanceDaoImpl"></bean>
-    <bean id="courseDao" class="hibernatecources.course.CourseDaoImpl"></bean>
-    <bean id="lessonDao" class="hibernatecources.lesson.LessonDaoImpl"></bean>
-    <bean id="studentDao" class="hibernatecources.student.StudentDaoImpl"></bean>
-    <bean id="subjectDao" class="hibernatecources.subject.SubjectDaoImpl"></bean>
-    <bean id="submissionDao" class="hibernatecources.submission.SubmissionDaoImpl"></bean>
+    <bean id="attendanceDao" class="hibernatecourses.dao.attendance.AttendanceDaoImpl"></bean>
+    <bean id="courseDao" class="hibernatecourses.dao.course.CourseDaoImpl"></bean>
+    <bean id="lessonDao" class="hibernatecourses.dao.lesson.LessonDaoImpl"></bean>
+    <bean id="studentDao" class="hibernatecourses.dao.student.StudentDaoImpl"></bean>
+    <bean id="subjectDao" class="hibernatecourses.dao.subject.SubjectDaoImpl"></bean>
+    <bean id="submissionDao" class="hibernatecourses.dao.subject.SubjectDaoImpl"></bean>
 
 
 </beans>

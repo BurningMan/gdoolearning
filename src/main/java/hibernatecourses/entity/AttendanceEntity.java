@@ -44,9 +44,8 @@ public class AttendanceEntity {
         AttendanceEntity that = (AttendanceEntity) o;
 
         if (lessonId != that.lessonId) return false;
-        if (studentId != that.studentId) return false;
+        return studentId == that.studentId;
 
-        return true;
     }
 
     @Override

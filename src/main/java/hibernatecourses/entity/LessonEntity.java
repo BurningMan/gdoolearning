@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 /**
  * User: Rodion
  * Date: 22.11.13
- * Time: 12:51
+ * Time: 14:02
  */
 public class LessonEntity {
     private int id;
@@ -56,6 +56,7 @@ public class LessonEntity {
         LessonEntity that = (LessonEntity) o;
 
         if (courseId != that.courseId) return false;
+        if (id != that.id) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
         if (topic != null ? !topic.equals(that.topic) : that.topic != null) return false;
 
@@ -64,19 +65,10 @@ public class LessonEntity {
 
     @Override
     public int hashCode() {
-        int result = courseId;
+        int result = id;
+        result = 31 * result + courseId;
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (topic != null ? topic.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "LessonEntity{" +
-                "id=" + id +
-                ", courseId=" + courseId +
-                ", date=" + date +
-                ", topic='" + topic + '\'' +
-                '}';
     }
 }

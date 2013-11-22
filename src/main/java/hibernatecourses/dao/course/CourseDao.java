@@ -1,7 +1,5 @@
 package hibernatecourses.dao.course;
 
-import hibernatecourses.entity.CourseEntity;
-
 import java.util.List;
 
 /**
