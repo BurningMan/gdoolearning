@@ -18,5 +18,9 @@ public class Main {
 
         // Retrieve the data source from the application context
         StudentDao studentDao = ctx.getBean("studentDao", StudentDao.class);
+        List<StudentEntity> studentEntities = studentDao.getAllStudents();
+        for (StudentEntity studentEntity : studentEntities) {
+            System.out.println(studentEntity.getName());
+        }
     }
 }
