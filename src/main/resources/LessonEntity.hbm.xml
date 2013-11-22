@@ -16,5 +16,12 @@
         <property name="topic">
             <column name="topic" sql-type="varchar" length="80"/>
         </property>
+
+        <set name="AttendanceEntity" cascade="update" table="attendance">
+            <key>
+                <column name="lesson_id" not-null="true" />
+            </key>
+            <one-to-many class="hibernatecourses.entity.AttendanceEntity" />
+        </set>
     </class>
 </hibernate-mapping>
