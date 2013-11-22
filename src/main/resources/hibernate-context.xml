@@ -42,5 +42,12 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <bean id="attendanceDao" class="hibernatecources.attendanceDao.AttendanceDaoImpl"></bean>
+    <bean id="courseDao" class="hibernatecources.course.CourseDaoImpl"></bean>
+    <bean id="lessonDao" class="hibernatecources.lesson.LessonDaoImpl"></bean>
+    <bean id="studentDao" class="hibernatecources.student.StudentDaoImpl"></bean>
+    <bean id="subjectDao" class="hibernatecources.subject.SubjectDaoImpl"></bean>
+    <bean id="submissionDao" class="hibernatecources.submission.SubmissionDaoImpl"></bean>
+
 
 </beans>
