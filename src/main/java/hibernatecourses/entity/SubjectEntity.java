@@ -1,5 +1,7 @@
 package hibernatecourses.entity;
 
+import java.util.Set;
+
 /**
  * User: Rodion
  * Date: 22.11.13
@@ -7,6 +9,15 @@ package hibernatecourses.entity;
  */
 public class SubjectEntity {
     private int id;
+    private Set<SubmissionEntity> courseEntity;
+
+    public Set<SubmissionEntity> getCourseEntity() {
+        return courseEntity;
+    }
+
+    public void setCourseEntity(Set<SubmissionEntity> courseEntity) {
+        this.courseEntity = courseEntity;
+    }
 
     public int getId() {
         return id;

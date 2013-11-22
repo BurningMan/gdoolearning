@@ -5,6 +5,8 @@ import hibernatecourses.entity.StudentEntity;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.List;
+
 /**
  * User: Rodion
  * Date: 22.11.13
@@ -16,8 +18,5 @@ public class Main {
 
         // Retrieve the data source from the application context
         StudentDao studentDao = ctx.getBean("studentDao", StudentDao.class);
-        StudentEntity studentEntity = new StudentEntity();
-        studentEntity.setName("Ivan");
-        studentDao.addStudent(studentEntity);
     }
 }

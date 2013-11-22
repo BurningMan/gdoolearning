@@ -12,7 +12,7 @@
             <column name="name" sql-type="varchar" length="45"/>
         </property>
         
-        <set name="CourseEntity" cascade="update" table="course">
+        <set name="courseEntity" cascade="save-update" table="course">
             <key>
                 <column name="subject_id" not-null="true" />
             </key>

@@ -12,14 +12,14 @@
             <column name="subject_id" sql-type="int" length="10"/>
         </property>
 
-        <set name="SubmissionEntity" cascade="update" table="submission">
+        <set name="submissionEntity" cascade="save-update" table="submission">
             <key>
                 <column name="course_id" not-null="true" />
             </key>
             <one-to-many class="hibernatecourses.entity.SubmissionEntity" />
         </set>
 
-        <set name="LessonEntity" cascade="update" table="lesson">
+        <set name="lessonEntity" cascade="save-update" table="lesson">
             <key>
                 <column name="course_id" not-null="true" />
             </key>

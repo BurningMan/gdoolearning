@@ -18,7 +18,7 @@
             <column name="topic" sql-type="varchar" length="80"/>
         </property>
 
-        <set name="AttendanceEntity" cascade="update" table="attendance">
+        <set name="attendanceEntity" cascade="save-update" table="attendance">
             <key>
                 <column name="lesson_id" not-null="true" />
             </key>

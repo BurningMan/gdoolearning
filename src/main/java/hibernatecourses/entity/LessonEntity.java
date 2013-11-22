@@ -1,6 +1,7 @@
 package hibernatecourses.entity;
 
 import java.sql.Timestamp;
+import java.util.Set;
 
 /**
  * User: Rodion
@@ -9,6 +10,15 @@ import java.sql.Timestamp;
  */
 public class LessonEntity {
     private int id;
+    private Set<AttendanceEntity> attendanceEntity;
+
+    public Set<AttendanceEntity> getAttendanceEntity() {
+        return attendanceEntity;
+    }
+
+    public void setAttendanceEntity(Set<AttendanceEntity> attendanceEntity) {
+        this.attendanceEntity = attendanceEntity;
+    }
 
     public int getId() {
         return id;
