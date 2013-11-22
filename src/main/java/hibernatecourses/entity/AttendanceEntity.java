@@ -8,33 +8,33 @@ import java.io.Serializable;
  * Time: 12:51
  */
 public class AttendanceEntity  implements Serializable {
-    private int id;
+    private Integer id;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    private int studentId;
+    private Integer studentId;
 
-    public int getStudentId() {
+    public Integer getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(int studentId) {
+    public void setStudentId(Integer studentId) {
         this.studentId = studentId;
     }
 
-    private int lessonId;
+    private Integer lessonId;
 
-    public int getLessonId() {
+    public Integer getLessonId() {
         return lessonId;
     }
 
-    public void setLessonId(int lessonId) {
+    public void setLessonId(Integer lessonId) {
         this.lessonId = lessonId;
     }
 

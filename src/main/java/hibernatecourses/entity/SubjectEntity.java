@@ -9,15 +9,15 @@ import java.util.Set;
  * Time: 12:51
  */
 public class SubjectEntity implements Serializable {
-    private int id;
+    private Integer id;
     private String name;
 
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

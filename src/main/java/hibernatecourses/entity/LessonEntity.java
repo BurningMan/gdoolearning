@@ -10,8 +10,8 @@ import java.util.Set;
  * Time: 14:02
  */
 public class LessonEntity  implements Serializable {
-    private int id;
-    private int courseId;
+    private Integer id;
+    private Integer courseId;
     private Timestamp startTime;
     private Set<AttendanceEntity> attendanceEntity;
 
@@ -23,19 +23,19 @@ public class LessonEntity  implements Serializable {
         this.attendanceEntity = attendanceEntity;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getCourseId() {
+    public Integer getCourseId() {
         return courseId;
     }
 
-    public void setCourseId(int courseId) {
+    public void setCourseId(Integer courseId) {
         this.courseId = courseId;
     }
 
