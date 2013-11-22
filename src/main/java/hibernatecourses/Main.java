@@ -1,11 +1,9 @@
 package hibernatecourses;
 
-import hibernatecourses.dao.student.StudentDao;
+import hibernatecourses.dao.interfaces.StudentDao;
 import hibernatecourses.entity.StudentEntity;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import java.util.List;
 
 /**
  * User: Rodion

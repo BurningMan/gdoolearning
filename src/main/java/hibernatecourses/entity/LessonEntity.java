@@ -1,5 +1,6 @@
 package hibernatecourses.entity;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Set;
 
@@ -8,7 +9,7 @@ import java.util.Set;
  * Date: 22.11.13
  * Time: 14:02
  */
-public class LessonEntity {
+public class LessonEntity  implements Serializable {
     private int id;
     private int courseId;
     private Timestamp startTime;

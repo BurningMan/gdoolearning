@@ -1,10 +1,10 @@
-package hibernatecourses.dao.student;
+package hibernatecourses.dao.MySqlDao;
 
+import hibernatecourses.dao.interfaces.StudentDao;
 import hibernatecourses.entity.StudentEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 
-public class StudentDaoImpl implements StudentDao {
+public class MySqlStudentDao implements StudentDao {
 
     @Autowired
     private SessionFactory sessionFactory;

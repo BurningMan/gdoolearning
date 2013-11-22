@@ -1,4 +1,4 @@
-package hibernatecourses.dao.attendance;
+package hibernatecourses.dao.interfaces;
 
 import hibernatecourses.entity.AttendanceEntity;
 

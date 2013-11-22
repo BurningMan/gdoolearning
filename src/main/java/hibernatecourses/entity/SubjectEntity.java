@@ -1,5 +1,6 @@
 package hibernatecourses.entity;
 
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -7,17 +8,10 @@ import java.util.Set;
  * Date: 22.11.13
  * Time: 12:51
  */
-public class SubjectEntity {
+public class SubjectEntity implements Serializable {
     private int id;
-    private Set<SubmissionEntity> courseEntity;
+    private String name;
 
-    public Set<SubmissionEntity> getCourseEntity() {
-        return courseEntity;
-    }
-
-    public void setCourseEntity(Set<SubmissionEntity> courseEntity) {
-        this.courseEntity = courseEntity;
-    }
 
     public int getId() {
         return id;
@@ -27,7 +21,6 @@ public class SubjectEntity {
         this.id = id;
     }
 
-    private String name;
 
     public String getName() {
         return name;

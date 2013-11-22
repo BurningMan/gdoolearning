@@ -1,9 +1,9 @@
-package hibernatecourses.dao.attendance;
+package hibernatecourses.dao.MySqlDao;
 
+import hibernatecourses.dao.interfaces.AttendanceDao;
 import hibernatecourses.entity.AttendanceEntity;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
  * Time: 12:44
  */
 
-public class AttendanceDaoImpl implements AttendanceDao {
+public class MySqlAttendanceDao implements AttendanceDao {
 
 
     @Autowired

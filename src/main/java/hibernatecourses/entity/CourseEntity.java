@@ -1,6 +1,8 @@
 package hibernatecourses.entity;
 
-import java.security.Timestamp;
+import java.io.Serializable;
+
+import java.sql.Timestamp;
 import java.util.Set;
 
 /**
@@ -8,13 +10,21 @@ import java.util.Set;
  * Date: 22.11.13
  * Time: 14:02
  */
-public class CourseEntity {
+public class CourseEntity  implements Serializable {
     private int id;
     private int subjectId;
     private Timestamp startDate;
     private Timestamp finishDate;
-    private Set<SubmissionEntity> submissionEntity;
     private Set<LessonEntity> lessonEntity;
+    private Set<StudentEntity> studentEntity;
+
+    public Set<StudentEntity> getStudentEntity() {
+        return studentEntity;
+    }
+
+    public void setStudentEntity(Set<StudentEntity> studentEntity) {
+        this.studentEntity = studentEntity;
+    }
 
     public Set<LessonEntity> getLessonEntity() {
         return lessonEntity;
@@ -22,14 +32,6 @@ public class CourseEntity {
 
     public void setLessonEntity(Set<LessonEntity> lessonEntity) {
         this.lessonEntity = lessonEntity;
-    }
-
-    public Set<SubmissionEntity> getSubmissionEntity() {
-        return submissionEntity;
-    }
-
-    public void setSubmissionEntity(Set<SubmissionEntity> submissionEntity) {
-        this.submissionEntity = submissionEntity;
     }
 
     public int getId() {
@@ -86,6 +88,10 @@ public class CourseEntity {
         return "CourseEntity{" +
                 "id=" + id +
                 ", subjectId=" + subjectId +
+                ", startDate=" + startDate +
+                ", finishDate=" + finishDate +
+                ", lessonEntity=" + lessonEntity +
+                ", studentEntity=" + studentEntity +
                 '}';
     }
 }

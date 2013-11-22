@@ -1,4 +1,4 @@
-package hibernatecourses.dao.subject;
+package hibernatecourses.dao.interfaces;
 
 import hibernatecourses.entity.SubjectEntity;
 

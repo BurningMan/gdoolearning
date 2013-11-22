@@ -1,9 +1,9 @@
-package hibernatecourses.dao.subject;
+package hibernatecourses.dao.MySqlDao;
 
+import hibernatecourses.dao.interfaces.SubjectDao;
 import hibernatecourses.entity.SubjectEntity;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/hibernate-context.xml")
 @Transactional
-public class SubjectDaoImplTest {
+public class MySqlSubjectDaoTest {
 
     private static final String FIRST_TEST_SUBJECT = "firstTestSubject";
     private static final String SECOND_TEST_SUBJECT = "secondTestSubject";
@@ -66,12 +66,10 @@ public class SubjectDaoImplTest {
         Assert.assertFalse(subjectDao.getAllSubjects().contains(firstTestSubject));
     }
 
-    @Transactional
     private void addSubject(SubjectEntity subjectEntity) {
         subjectDao.addSubject(subjectEntity);
     }
 
-    @Transactional
     private void deleteSubject(SubjectEntity subjectEntity) {
         subjectDao.deleteSubject(subjectEntity.getId());
     }

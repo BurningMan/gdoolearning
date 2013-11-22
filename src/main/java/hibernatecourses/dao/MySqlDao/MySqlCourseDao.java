@@ -1,10 +1,10 @@
-package hibernatecourses.dao.course;
+package hibernatecourses.dao.MySqlDao;
 
+import hibernatecourses.dao.interfaces.CourseDao;
 import hibernatecourses.entity.CourseEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
  * Time: 12:44
  */
 
-public class CourseDaoImpl implements CourseDao {
+public class MySqlCourseDao implements CourseDao {
 
 
     @Autowired

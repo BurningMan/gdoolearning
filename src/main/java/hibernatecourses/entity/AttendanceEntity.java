@@ -1,11 +1,13 @@
 package hibernatecourses.entity;
 
+import java.io.Serializable;
+
 /**
  * User: Rodion
  * Date: 22.11.13
  * Time: 12:51
  */
-public class AttendanceEntity {
+public class AttendanceEntity  implements Serializable {
     private int id;
 
     public int getId() {

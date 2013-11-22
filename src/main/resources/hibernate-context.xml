@@ -31,7 +31,6 @@
                 <value>LessonEntity.hbm.xml</value>
                 <value>StudentEntity.hbm.xml</value>
                 <value>SubjectEntity.hbm.xml</value>
-                <value>SubmissionEntity.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -42,12 +41,11 @@
         <property name="dataSource" ref="dataSource"></property>
     </bean>
 
-    <bean id="attendanceDao" class="hibernatecourses.dao.attendance.AttendanceDaoImpl"></bean>
-    <bean id="courseDao" class="hibernatecourses.dao.course.CourseDaoImpl"></bean>
-    <bean id="lessonDao" class="hibernatecourses.dao.lesson.LessonDaoImpl"></bean>
-    <bean id="studentDao" class="hibernatecourses.dao.student.StudentDaoImpl"></bean>
-    <bean id="subjectDao" class="hibernatecourses.dao.subject.SubjectDaoImpl"></bean>
-    <bean id="submissionDao" class="hibernatecourses.dao.submission.SubmissionDaoImpl"></bean>
+    <bean id="attendanceDao" class="hibernatecourses.dao.MySqlDao.MySqlAttendanceDao"></bean>
+    <bean id="courseDao" class="hibernatecourses.dao.MySqlDao.MySqlCourseDao"></bean>
+    <bean id="lessonDao" class="hibernatecourses.dao.MySqlDao.MySqlLessonDao"></bean>
+    <bean id="studentDao" class="hibernatecourses.dao.MySqlDao.MySqlStudentDao"></bean>
+    <bean id="subjectDao" class="hibernatecourses.dao.MySqlDao.MySqlSubjectDao"></bean>
 
 
 </beans>

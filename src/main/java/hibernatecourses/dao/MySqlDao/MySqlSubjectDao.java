@@ -1,13 +1,10 @@
-package hibernatecourses.dao.subject;
+package hibernatecourses.dao.MySqlDao;
 
-import hibernatecourses.entity.StudentEntity;
+import hibernatecourses.dao.interfaces.SubjectDao;
 import hibernatecourses.entity.SubjectEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.internal.SessionFactoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,7 +14,7 @@ import java.util.List;
  * Date: 22.11.13
  * Time: 12:44
  */
-public class SubjectDaoImpl implements hibernatecourses.dao.subject.SubjectDao {
+public class MySqlSubjectDao implements SubjectDao {
 
     @Autowired
     private SessionFactory sessionFactory;
