@@ -47,8 +47,8 @@ CREATE TABLE `university`.`submission` (
 	    CONSTRAINT `course_constraint`
 		FOREIGN KEY `course_constraint` (`course_id`)
 		REFERENCES `university`.`course` (`id`)
-		ON DELETE NO ACTION
-		ON UPDATE NO ACTION
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE
 );
 
 
@@ -74,8 +74,8 @@ CREATE TABLE `university`.`attendance` (
 		CONSTRAINT `attendance_student_constraint`
 		FOREIGN KEY `attendance_student_constraint` (`student_id`)
 		REFERENCES `university`.`student` (`id`)
-		ON DELETE NO ACTION
-		ON UPDATE NO ACTION,
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE,
 		
 		CONSTRAINT `attendance_lesson_constraint`
 		FOREIGN KEY `attendance_lesson_constraint` (`lesson_id`)
