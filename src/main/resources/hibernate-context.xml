@@ -26,11 +26,11 @@
         </property>
         <property name="mappingResources">
             <list>
-                <value>AttendanceEntity.hbm.xml</value>
-                <value>CourseEntity.hbm.xml</value>
-                <value>LessonEntity.hbm.xml</value>
-                <value>StudentEntity.hbm.xml</value>
-                <value>SubjectEntity.hbm.xml</value>
+                <value>hibernatemappings/AttendanceEntity.hbm.xml</value>
+                <value>hibernatemappings/CourseEntity.hbm.xml</value>
+                <value>hibernatemappings/LessonEntity.hbm.xml</value>
+                <value>hibernatemappings/StudentEntity.hbm.xml</value>
+                <value>hibernatemappings/SubjectEntity.hbm.xml</value>
             </list>
         </property>
     </bean>
