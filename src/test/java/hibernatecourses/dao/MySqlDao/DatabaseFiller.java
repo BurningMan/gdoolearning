@@ -1,3 +1,5 @@
+package hibernatecourses.dao.MySqlDao;
+
 import org.dbunit.database.DatabaseConnection;
 import org.dbunit.database.IDatabaseConnection;
 import org.dbunit.dataset.IDataSet;

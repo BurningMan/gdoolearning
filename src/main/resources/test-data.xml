@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <table name="student">
+        <column>NAME</column>
+        <row>
+            <value>Sinkov Volodymyr</value>
+        </row>
+        <row>
+            <value>Rodion Shkrobot</value>
+        </row>
+    </table>
+    <table name="subject">
+        <column>NAME</column>
+        <row>
+            <value>OOP</value>
+        </row>
+        <row>
+            <value>Math</value>
+        </row>
+        <row>
+            <value>History</value>
+        </row>
+    </table>
+    <table name="course">
+        <column>SUBJECT_ID</column>
+        <column>START_DATE</column>
+        <column>FINISH_DATE</column>
+        <row>
+            <value>1</value>
+            <value>2013-01-01</value>
+            <value>2013-05-30</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>2014-01-01</value>
+            <value>2014-05-30</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>2015-01-01</value>
+            <value>2015-05-30</value>
+        </row>
+
+    </table>
+
+    <table name="submission">
+        <column>STUDENT_ID</column>
+        <column>COURSE_ID</column>
+        <row>
+            <value>1</value>
+            <value>1</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>2</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>1</value>
+        </row>
+    </table>
+
+    <table name="lesson">
+        <column>COURSE_ID</column>
+        <column>START_TIME</column>
+        <column>TOPIC</column>
+        <row>
+            <value>1</value>
+            <value>2013-11-22</value>
+            <value>Topic1</value>
+        </row>
+        <row>
+            <value>2</value>
+            <value>2013-11-22</value>
+            <value>Topic2</value>
+        </row>
+        <row>
+            <value>1</value>
+            <value>2013-11-22</value>
+            <value>Topic3</value>
+        </row>
+        <row>
+            <value>1</value>
+            <value>2013-11-22</value>
+            <value>Topic4</value>
+        </row>
+    </table>
+
+    <table name="attendance">
+        <column>STUDENT_ID</column>
+        <column>LESSON_ID</column>
+        <column>SUBMISSION_ID</column>
+        <row>
+            <value>1</value>
+            <value>1</value>
+            <value>1</value>
+        </row>
+        <row>
+            <value>1</value>
+            <value>3</value>
+            <value>2</value>
+        </row>
+    </table>
+</dataset>

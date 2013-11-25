@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.sql.DataSource;
 import java.util.List;
 
 /**
@@ -22,6 +24,7 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "/hibernate-context.xml")
 @Transactional
+@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
 public class MySqlSubjectDaoTest {
 
     private static final String FIRST_TEST_SUBJECT = "firstTestSubject";
@@ -32,6 +35,8 @@ public class MySqlSubjectDaoTest {
     private ApplicationContext applicationContext;
     @Autowired
     private SubjectDao subjectDao;
+    @Autowired
+    private DataSource dataSource;
 
     @Before
     public void setUp() throws Exception {
@@ -39,18 +44,17 @@ public class MySqlSubjectDaoTest {
         secondTestSubject = new SubjectEntity();
         firstTestSubject.setName(FIRST_TEST_SUBJECT);
         secondTestSubject.setName(SECOND_TEST_SUBJECT);
+        DatabaseFiller databaseFiller = new DatabaseFiller("/test-data.xml", dataSource);
+        databaseFiller.fill();
     }
 
     @Test
     public void testAddSubject() throws Exception {
-        Assert.assertEquals(subjectDao.getAllSubjects().size(),0);
         addSubject(firstTestSubject);
         Assert.assertTrue(subjectDao.getAllSubjects().contains(firstTestSubject));
     }
 
-    @Test
     public void testGetAllSubjects() throws Exception {
-        Assert.assertEquals(subjectDao.getAllSubjects().size(),0);
         addSubject(firstTestSubject);
         addSubject(secondTestSubject);
         List<SubjectEntity> subjectEntities = subjectDao.getAllSubjects();
@@ -58,7 +62,6 @@ public class MySqlSubjectDaoTest {
         Assert.assertTrue(subjectEntities.contains(secondTestSubject));
     }
 
-    @Test
     public void testDeleteSubject() throws Exception {
         addSubject(firstTestSubject);
         Assert.assertTrue(subjectDao.getAllSubjects().contains(firstTestSubject));
@@ -73,5 +76,6 @@ public class MySqlSubjectDaoTest {
     private void deleteSubject(SubjectEntity subjectEntity) {
         subjectDao.deleteSubject(subjectEntity.getId());
     }
+
 
 }
