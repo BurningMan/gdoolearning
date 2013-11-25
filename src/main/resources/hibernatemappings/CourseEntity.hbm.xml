@@ -21,5 +21,11 @@
         <property name="finishDate" type="java.sql.Timestamp">
             <column name="finish_date" sql-type="timestamp"/>
         </property>
+        <set name="studentEntity" cascade="save-update" table="submission">
+            <key>
+                <column name="course_id" not-null="true"/>
+            </key>
+            <many-to-many column="id" class="hibernatecourses.entity.StudentEntity"/>
+        </set>
     </class>
 </hibernate-mapping>

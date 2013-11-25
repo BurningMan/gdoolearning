@@ -12,7 +12,6 @@ import java.util.List;
 /**
  * Created with IntelliJ IDEA. User: Andrii_Chupyr Date: 22.11.13 Time: 12:44
  */
-@Transactional
 public class MySqlCourseDao implements CourseDao {
 
     @Autowired

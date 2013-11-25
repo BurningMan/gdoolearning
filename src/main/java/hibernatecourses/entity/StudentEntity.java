@@ -11,6 +11,8 @@ import java.util.Set;
 public class StudentEntity implements Serializable {
     private Integer id;
     private String name;
+    private Set<CourseEntity> courseSet;
+
 
     public Integer getId() {
         return id;
@@ -27,6 +29,15 @@ public class StudentEntity implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Set<CourseEntity> getCourseSet() {
+        return courseSet;
+    }
+
+    public void setCourseSet(Set<CourseEntity> courseSet) {
+        this.courseSet = courseSet;
+    }
+
 
     @Override
     public boolean equals(Object o) {

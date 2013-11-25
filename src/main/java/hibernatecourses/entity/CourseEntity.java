@@ -1,7 +1,5 @@
 package hibernatecourses.entity;
 
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Set;
@@ -14,6 +12,9 @@ public class CourseEntity implements Serializable {
     private SubjectEntity subject;
     private Timestamp startDate;
     private Timestamp finishDate;
+    private Set<StudentEntity> studentEntity;
+
+
 
     public SubjectEntity getSubjectEntity() {
         return subject;
@@ -22,7 +23,6 @@ public class CourseEntity implements Serializable {
     public void setSubjectEntity(SubjectEntity subjectEntity) {
         this.subject = subjectEntity;
     }
-
 
     public Integer getId() {
         return id;
@@ -46,6 +46,14 @@ public class CourseEntity implements Serializable {
 
     public void setFinishDate(Timestamp finishDate) {
         this.finishDate = finishDate;
+    }
+
+    public Set<StudentEntity> getStudentEntity() {
+        return studentEntity;
+    }
+
+    public void setStudentEntity(Set<StudentEntity> studentEntity) {
+        this.studentEntity = studentEntity;
     }
 
     @Override
