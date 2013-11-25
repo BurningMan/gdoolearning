@@ -1,14 +1,32 @@
 package hibernatecourses.entity;
 
 import java.io.Serializable;
+import java.util.Set;
 
 /**
- * User: Rodion
- * Date: 22.11.13
- * Time: 12:51
+ * User: Rodion Date: 22.11.13 Time: 12:51
  */
-public class AttendanceEntity  implements Serializable {
+public class AttendanceEntity implements Serializable {
     private Integer id;
+    private StudentEntity student;
+    private LessonEntity lesson;
+    private Integer submissionId;
+
+    public Integer getSubmissionId() {
+        return submissionId;
+    }
+
+    public void setSubmissionId(Integer submissionId) {
+        this.submissionId = submissionId;
+    }
+
+    public LessonEntity getLesson() {
+        return lesson;
+    }
+
+    public void setLesson(LessonEntity lesson) {
+        this.lesson = lesson;
+    }
 
     public Integer getId() {
         return id;
@@ -18,26 +36,6 @@ public class AttendanceEntity  implements Serializable {
         this.id = id;
     }
 
-    private Integer studentId;
-
-    public Integer getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(Integer studentId) {
-        this.studentId = studentId;
-    }
-
-    private Integer lessonId;
-
-    public Integer getLessonId() {
-        return lessonId;
-    }
-
-    public void setLessonId(Integer lessonId) {
-        this.lessonId = lessonId;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -45,15 +43,18 @@ public class AttendanceEntity  implements Serializable {
 
         AttendanceEntity that = (AttendanceEntity) o;
 
-        if (lessonId != that.lessonId) return false;
-        return studentId == that.studentId;
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
+        if (lesson != null ? !lesson.equals(that.lesson) : that.lesson != null) return false;
+        if (student != null ? !student.equals(that.student) : that.student != null) return false;
 
+        return true;
     }
 
     @Override
     public int hashCode() {
-        int result = studentId;
-        result = 31 * result + lessonId;
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (student != null ? student.hashCode() : 0);
+        result = 31 * result + (lesson != null ? lesson.hashCode() : 0);
         return result;
     }
 
@@ -61,8 +62,9 @@ public class AttendanceEntity  implements Serializable {
     public String toString() {
         return "AttendanceEntity{" +
                 "id=" + id +
-                ", studentId=" + studentId +
-                ", lessonId=" + lessonId +
+                ", student=" + student +
+                ", lesson=" + lesson +
+                ", submissionId=" + submissionId +
                 '}';
     }
 }

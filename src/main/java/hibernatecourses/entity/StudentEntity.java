@@ -8,27 +8,9 @@ import java.util.Set;
  * Date: 22.11.13
  * Time: 12:51
  */
-public class StudentEntity  implements Serializable {
+public class StudentEntity implements Serializable {
     private Integer id;
-    private Set<AttendanceEntity> attendanceEntity;
-    private Set<CourseEntity> courseSet;
-
-    public Set<CourseEntity> getCourseSet() {
-        return courseSet;
-    }
-
-    public void setCourseSet(Set<CourseEntity> courseSet) {
-        this.courseSet = courseSet;
-    }
-
-
-    public Set<AttendanceEntity> getAttendanceEntity() {
-        return attendanceEntity;
-    }
-
-    public void setAttendanceEntity(Set<AttendanceEntity> attendanceEntity) {
-        this.attendanceEntity = attendanceEntity;
-    }
+    private String name;
 
     public Integer getId() {
         return id;
@@ -37,8 +19,6 @@ public class StudentEntity  implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    private String name;
 
     public String getName() {
         return name;

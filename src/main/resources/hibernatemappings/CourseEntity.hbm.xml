@@ -9,28 +9,17 @@
             <column name="id" sql-type="int" length="10" not-null="true"/>
             <generator class="increment"/>
         </id>
-        <property name="subjectId" type="java.lang.Integer">
-            <column name="subject_id" sql-type="int" length="10"/>
-        </property>
+        <set name="subjectEntity" cascade="save-update" table="subject">
+            <key>
+                <column name="id" not-null="true"/>
+            </key>
+            <one-to-many class="hibernatecourses.entity.SubjectEntity"/>
+        </set>
         <property name="startDate" type="java.sql.Timestamp">
-            <column name="start_date" sql-type="timestamp" />
+            <column name="start_date" sql-type="timestamp"/>
         </property>
         <property name="finishDate" type="java.sql.Timestamp">
-            <column name="finish_date" sql-type="timestamp" />
+            <column name="finish_date" sql-type="timestamp"/>
         </property>
-
-        <set name="studentEntity" cascade="save-update" table="submission">
-            <key>
-                <column name="course_id" not-null="true" />
-            </key>
-            <many-to-many column="id" class="hibernatecourses.entity.StudentEntity" />
-        </set>
-
-        <set name="lessonEntity" cascade="save-update" table="lesson">
-            <key>
-                <column name="course_id" not-null="true" />
-            </key>
-            <one-to-many class="hibernatecourses.entity.LessonEntity" />
-        </set>
     </class>
 </hibernate-mapping>

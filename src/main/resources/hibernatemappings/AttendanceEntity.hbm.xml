@@ -9,11 +9,17 @@
             <column name="id" sql-type="int" length="10" not-null="true"/>
             <generator class="increment"/>
         </id>
-        <property name="studentId">
-            <column name="student_id" sql-type="int" length="10"/>
-        </property>
-        <property name="lessonId">
-            <column name="lesson_id" sql-type="int" length="10"/>
-        </property>
+        <set name="studentEntity" cascade="save-update" table="student">
+            <key>
+                <column name="id" not-null="true"/>
+            </key>
+            <one-to-many class="hibernatecourses.entity.StudentEntity"/>
+        </set>
+        <set name="lessonEntity" cascade="save-update" table="lesson">
+            <key>
+                <column name="id" not-null="true"/>
+            </key>
+            <one-to-many class="hibernatecourses.entity.LessonEntity"/>
+        </set>
     </class>
 </hibernate-mapping>

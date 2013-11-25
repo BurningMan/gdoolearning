@@ -9,21 +9,17 @@
             <column name="id" sql-type="int" length="10" not-null="true"/>
             <generator class="increment"/>
         </id>
-        <property name="courseId">
-            <column name="course_id" sql-type="int" length="10"/>
+        <property name="topic">
+            <column name="topic" sql-type="varchar" length="80"/>
         </property>
         <property name="startTime">
             <column name="start_time" sql-type="timestamp" not-null="true"/>
         </property>
-        <property name="topic">
-            <column name="topic" sql-type="varchar" length="80"/>
-        </property>
-
-        <set name="AttendanceEntity" cascade="save-update" table="attendance">
+        <set name="courseEntity" cascade="save-update" table="course">
             <key>
-                <column name="lesson_id" not-null="true" />
+                <column name="id" not-null="true"/>
             </key>
-            <one-to-many class="hibernatecourses.entity.AttendanceEntity" />
+            <one-to-many class="hibernatecourses.entity.CourseEntity"/>
         </set>
     </class>
 </hibernate-mapping>

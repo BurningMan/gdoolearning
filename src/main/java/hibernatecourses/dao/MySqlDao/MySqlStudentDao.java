@@ -5,16 +5,11 @@ import hibernatecourses.entity.StudentEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Andrii_Chupyr
- * Date: 22.11.13
- * Time: 12:44
- */
-
+/** Created with IntelliJ IDEA. User: Andrii_Chupyr Date: 22.11.13 Time: 12:44 */
 
 public class MySqlStudentDao implements StudentDao {
 

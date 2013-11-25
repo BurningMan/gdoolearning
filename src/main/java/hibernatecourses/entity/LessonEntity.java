@@ -5,23 +5,13 @@ import java.sql.Timestamp;
 import java.util.Set;
 
 /**
- * User: Rodion
- * Date: 22.11.13
- * Time: 14:02
+ * User: Rodion Date: 22.11.13 Time: 14:02
  */
-public class LessonEntity  implements Serializable {
+public class LessonEntity implements Serializable {
     private Integer id;
-    private Integer courseId;
+    private CourseEntity course;
     private Timestamp startTime;
-    private Set<AttendanceEntity> attendanceEntity;
-
-    public Set<AttendanceEntity> getAttendanceEntity() {
-        return attendanceEntity;
-    }
-
-    public void setAttendanceEntity(Set<AttendanceEntity> attendanceEntity) {
-        this.attendanceEntity = attendanceEntity;
-    }
+    private String topic;
 
     public Integer getId() {
         return id;
@@ -29,14 +19,6 @@ public class LessonEntity  implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(Integer courseId) {
-        this.courseId = courseId;
     }
 
     public Timestamp getStartTime() {
@@ -47,14 +29,20 @@ public class LessonEntity  implements Serializable {
         this.startTime = date;
     }
 
-    private String topic;
-
     public String getTopic() {
         return topic;
     }
 
     public void setTopic(String topic) {
         this.topic = topic;
+    }
+
+    public CourseEntity getCourse() {
+        return course;
+    }
+
+    public void setCourse(CourseEntity course) {
+        this.course = course;
     }
 
     @Override
@@ -64,7 +52,8 @@ public class LessonEntity  implements Serializable {
 
         LessonEntity that = (LessonEntity) o;
 
-        if (courseId != that.courseId) return false;
+        if (course != null ? !course.equals(that.course) : that.course != null) return false;
+        if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (startTime != null ? !startTime.equals(that.startTime) : that.startTime != null) return false;
         if (topic != null ? !topic.equals(that.topic) : that.topic != null) return false;
 
@@ -73,7 +62,8 @@ public class LessonEntity  implements Serializable {
 
     @Override
     public int hashCode() {
-        int result = courseId;
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (course != null ? course.hashCode() : 0);
         result = 31 * result + (startTime != null ? startTime.hashCode() : 0);
         result = 31 * result + (topic != null ? topic.hashCode() : 0);
         return result;
@@ -83,9 +73,10 @@ public class LessonEntity  implements Serializable {
     public String toString() {
         return "LessonEntity{" +
                 "id=" + id +
-                ", courseId=" + courseId +
-                ", date=" + startTime +
+                ", course=" + course +
+                ", startTime=" + startTime +
                 ", topic='" + topic + '\'' +
                 '}';
     }
+
 }

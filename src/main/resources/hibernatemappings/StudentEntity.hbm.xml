@@ -12,19 +12,5 @@
         <property name="name" type="java.lang.String">
             <column name="name" sql-type="varchar" length="45"/>
         </property>
-
-        <set name="courseSet" cascade="save-update" table="submission">
-            <key>
-                <column name="student_id" not-null="true"/>
-            </key>
-            <many-to-many column="id" class="hibernatecourses.entity.CourseEntity"/>
-        </set>
-
-        <set name="AttendanceEntity" cascade="save-update" table="attendance">
-            <key>
-                <column name="student_id" not-null="true"/>
-            </key>
-            <one-to-many class="hibernatecourses.entity.AttendanceEntity"/>
-        </set>
     </class>
 </hibernate-mapping>
