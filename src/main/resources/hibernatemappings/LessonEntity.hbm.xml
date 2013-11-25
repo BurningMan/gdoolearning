@@ -15,7 +15,7 @@
         <property name="startTime">
             <column name="start_time" sql-type="timestamp" not-null="true"/>
         </property>
-        <set name="courseEntity" cascade="save-update" table="course">
+        <set name="course" cascade="save-update" table="course">
             <key>
                 <column name="id" not-null="true"/>
             </key>

@@ -36,6 +36,14 @@ public class AttendanceEntity implements Serializable {
         this.id = id;
     }
 
+    public StudentEntity getStudent() {
+        return student;
+    }
+
+    public void setStudent(StudentEntity student) {
+        this.student = student;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

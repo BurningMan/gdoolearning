@@ -11,7 +11,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.Iterator;
 import java.util.List;
 
-/** User: Rodion Date: 22.11.13 Time: 14:20 */
+/**
+ * User: Rodion Date: 22.11.13 Time: 14:20
+ */
 public class Main {
     public static void main(String[] args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("hibernate-context.xml");

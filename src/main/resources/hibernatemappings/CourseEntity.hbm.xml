@@ -9,7 +9,7 @@
             <column name="id" sql-type="int" length="10" not-null="true"/>
             <generator class="increment"/>
         </id>
-        <set name="subjectEntity" cascade="save-update" table="subject">
+        <set name="subject" cascade="save-update" table="subject">
             <key>
                 <column name="id" not-null="true"/>
             </key>

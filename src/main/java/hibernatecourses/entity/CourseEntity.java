@@ -14,13 +14,11 @@ public class CourseEntity implements Serializable {
     private Timestamp finishDate;
     private Set<StudentEntity> studentEntity;
 
-
-
-    public SubjectEntity getSubjectEntity() {
+    public SubjectEntity getSubject() {
         return subject;
     }
 
-    public void setSubjectEntity(SubjectEntity subjectEntity) {
+    public void setSubject(SubjectEntity subjectEntity) {
         this.subject = subjectEntity;
     }
 

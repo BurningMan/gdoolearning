@@ -9,13 +9,13 @@
             <column name="id" sql-type="int" length="10" not-null="true"/>
             <generator class="increment"/>
         </id>
-        <set name="studentEntity" cascade="save-update" table="student">
+        <set name="student" cascade="save-update" table="student">
             <key>
                 <column name="id" not-null="true"/>
             </key>
             <one-to-many class="hibernatecourses.entity.StudentEntity"/>
         </set>
-        <set name="lessonEntity" cascade="save-update" table="lesson">
+        <set name="lesson" cascade="save-update" table="lesson">
             <key>
                 <column name="id" not-null="true"/>
             </key>
