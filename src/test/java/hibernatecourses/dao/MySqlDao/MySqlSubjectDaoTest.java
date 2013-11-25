@@ -53,7 +53,7 @@ public class MySqlSubjectDaoTest {
         addSubject(firstTestSubject);
         Assert.assertTrue(subjectDao.getAllSubjects().contains(firstTestSubject));
     }
-
+    @Test
     public void testGetAllSubjects() throws Exception {
         addSubject(firstTestSubject);
         addSubject(secondTestSubject);
@@ -61,7 +61,7 @@ public class MySqlSubjectDaoTest {
         Assert.assertTrue(subjectEntities.contains(firstTestSubject));
         Assert.assertTrue(subjectEntities.contains(secondTestSubject));
     }
-
+    @Test
     public void testDeleteSubject() throws Exception {
         addSubject(firstTestSubject);
         Assert.assertTrue(subjectDao.getAllSubjects().contains(firstTestSubject));
