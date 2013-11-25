@@ -71,7 +71,8 @@ CREATE TABLE `university`.`lesson` (
 CREATE TABLE `university`.`attendance` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `student_id` int(11),
-  `lesson_id` int(11),  
+  `lesson_id` int(11),
+  `submission_id` int(11),
   PRIMARY KEY (`id`),
 		CONSTRAINT `attendance_student_constraint`
 		FOREIGN KEY `attendance_student_constraint` (`student_id`)
@@ -83,5 +84,11 @@ CREATE TABLE `university`.`attendance` (
 		FOREIGN KEY `attendance_lesson_constraint` (`lesson_id`)
 		REFERENCES `university`.`lesson` (`id`)
 		ON DELETE CASCADE
-		ON UPDATE CASCADE
+		ON UPDATE CASCADE,
+
+        CONSTRAINT `attendance_submission_constraint`
+        FOREIGN KEY `attendance_submission_constraint` (`submission_id`)
+        REFERENCES `university`.`submission` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 );

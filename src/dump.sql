@@ -19,5 +19,5 @@ INSERT INTO `university`.`lesson` (`course_id`, `start_time`, `topic`) VALUES ('
 INSERT INTO `university`.`lesson` (`course_id`, `start_time`, `topic`) VALUES ('1', '2013-11-22', 'Topic3');
 INSERT INTO `university`.`lesson` (`course_id`, `start_time`, `topic`) VALUES ('1', '2013-11-22', 'Topic4');
 
-INSERT INTO `university`.`attendance` (`student_id`, `lesson_id`) VALUES ('1', '1');
-INSERT INTO `university`.`attendance` (`student_id`, `lesson_id`) VALUES ('1', '3');
+INSERT INTO `university`.`attendance` (`student_id`, `lesson_id`, `submission_id`) VALUES ('1', '1', '1');
+INSERT INTO `university`.`attendance` (`student_id`, `lesson_id`, `submission_id`) VALUES ('1', '3', '2');
