@@ -9,12 +9,9 @@
             <column name="id" sql-type="int" length="10" not-null="true"/>
             <generator class="increment"/>
         </id>
-        <set name="subject" cascade="save-update" table="subject">
-            <key>
-                <column name="id" not-null="true"/>
-            </key>
-            <one-to-many class="hibernatecourses.entity.SubjectEntity"/>
-        </set>
+
+        <one-to-one name="subject" class="hibernatecourses.entity.SubjectEntity" constrained="true">
+        </one-to-one>
         <property name="startDate" type="java.sql.Timestamp">
             <column name="start_date" sql-type="timestamp"/>
         </property>

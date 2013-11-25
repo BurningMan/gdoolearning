@@ -9,17 +9,12 @@
             <column name="id" sql-type="int" length="10" not-null="true"/>
             <generator class="increment"/>
         </id>
-        <set name="student" cascade="save-update" table="student">
-            <key>
-                <column name="id" not-null="true"/>
-            </key>
-            <one-to-many class="hibernatecourses.entity.StudentEntity"/>
-        </set>
-        <set name="lesson" cascade="save-update" table="lesson">
-            <key>
-                <column name="id" not-null="true"/>
-            </key>
-            <one-to-many class="hibernatecourses.entity.LessonEntity"/>
-        </set>
+        <property name="submissionId">
+            <column name="submission_id" sql-type="java.lang.Integer"></column>
+        </property>
+        <one-to-one name="student" class="hibernatecourses.entity.StudentEntity" cascade="save-update"
+                    constrained="true"></one-to-one>
+        <one-to-one name="lesson" cascade="save-update" class="hibernatecourses.entity.LessonEntity" constrained="true"></one-to-one>
+
     </class>
 </hibernate-mapping>

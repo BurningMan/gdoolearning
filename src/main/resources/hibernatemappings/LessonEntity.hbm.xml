@@ -15,11 +15,9 @@
         <property name="startTime">
             <column name="start_time" sql-type="timestamp" not-null="true"/>
         </property>
-        <set name="course" cascade="save-update" table="course">
-            <key>
-                <column name="id" not-null="true"/>
-            </key>
-            <one-to-many class="hibernatecourses.entity.CourseEntity"/>
-        </set>
+        <one-to-one name="course" class="hibernatecourses.entity.CourseEntity" constrained="true" cascade="save-update">
+
+        </one-to-one>
+
     </class>
 </hibernate-mapping>
